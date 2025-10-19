@@ -31,9 +31,24 @@
           />
           <div class="header__profile-info">
             <h1 class="header__profile-name">Jacques Cousteau</h1>
-            <button class="header__button-edit">
+            <button id="header__button-edit" class="header__button-edit">
               <i class="header__icon-pencil"></i>
             </button>
+            <div id="header__edit-profile" class="header__edit-profile">
+              <div class="header__edit-profile-content">
+                <span class="close">&times;</span>
+                <p class="header__edit-profile-title">Editar perfil</p>
+                <form id="header__edit-profile-form">
+                <fielset id="header__edit-profile-input_name" class="header__edit-profile-information">
+                  <input type="text" class="header__edit-profile-input header__edit-profile-input_name" placeholder="Nombre" required>
+                </fielset>
+                <fielset id="header__edit-profile-input_description" class="header__edit-profile-information">
+                  <input type="text" class="header__edit-profile-input header__edit-profile-input_description" placeholder="Acerca de mí" required>
+                </fielset>
+                <button type="submit" class="header__edit-profile-button">Guardar</button>
+              </form>
+              </div>
+            </div>
             <p class="header__profile-trade">Explorador</p>
           </div>
           <button class="header__button-add">
@@ -117,5 +132,6 @@
         <p class="footer__autor">&#169; 2025. Esteban Grande Zempoaltecatl</p>
       </footer>
     </div>
+    <script src="./scripts/script.js"></script>
   </body>
 </html>

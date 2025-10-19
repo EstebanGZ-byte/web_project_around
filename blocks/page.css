@@ -6,3 +6,24 @@
   min-width: 320px;
   max-width: 1280px;
 }
+
+@media screen and (max-width: 768px)
+{
+  .page {
+    background-color: #000000;
+    max-width: 768px;
+    height: 1517px;
+    justify-content: center;
+  }
+}
+
+
+
+@media screen and (max-width:320px) {
+  .page {
+    background-color: #000000;
+    max-width: 320px;
+    height: 2814px;
+    justify-content: center;
+  }
+}

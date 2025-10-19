@@ -1,3 +1,31 @@
 .footer {
-  color: white;
+  display: flex;
+  position: relative;
+  width: 318px;
+  height: 18px;
+  margin: 67px 562px 60px 200px;
+  font-family: "Arial";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #545454;
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    width: 318px;
+    height: 18px;
+    margin: 50px 0 50px 220px;
+  }
+}
+
+@media screen and (max-width: 320px){
+  .footer {
+    width: 282px;
+    height: 14px;
+    margin: 50px 19px 36px 19px;
+    font-size: 14px;
+    text-align: center;
+  }
 }
