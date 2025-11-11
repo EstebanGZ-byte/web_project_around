@@ -1,47 +1,52 @@
+document.addEventListener("DOMContentLoaded", () => {
 const edit = document.getElementById("header__edit-profile");
 const btn = document.getElementById("header__button-edit");
-const span = document.getElementsByClassName("close")[0];
-const profileEditForm = document.querySelector(".header__edit-profile-form");
+const closeButton = edit.querySelector(".close");
+const profileEditForm = document.getElementById("header__edit-profile-form");
 const heartBtn = document.querySelectorAll('.content__button-like');
 const heartIcon = document.querySelectorAll('.content__icon-heart');
-let profileName = document.querySelector(".header__profile-name");
-let profileDescription = document.querySelector(".header__profile-trade");
-let nameInput = document.querySelector(".header__edit-profile-input_name");
-let aboutInput = document.querySelector(".header__edit-profile-input_description");
+const saveButton = document.querySelector('.header_edit-profile-button');
+const nameInput = edit.querySelector(".header__edit-profile-input_name");
+const aboutInput = edit.querySelector(".header__edit-profile-input_description");
+const profileName = document.querySelector(".header__profile-name");
+const profileDescription = document.querySelector(".header__profile-trade");
 
-heartBtn.forEach((btn, index) => {
+    heartBtn.forEach((btn, index) => {
   btn.addEventListener('click', () => {
     heartIcon[index].classList.toggle('content__icon-heart-black');
   });
 });
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
 
-btn.onclick = function() {
-  nameInput.value = profileName.textContent;
-  aboutInput.value = profileDescription.textContent;
-  edit.style.display = "block";
-}
+    profileName.textContent = nameInput.value;
+    profileDescription.textContent = aboutInput.value;
+    edit.style.display = "none";
 
-span.onclick = function() {
-  edit.style.display = "none";
-}
+    return false;
+  };
 
-window.onclick = function(event) {
-  if (event.target == edit) {
+    btn.addEventListener('click', () => {
+    nameInput.value = profileName.textContent;
+    aboutInput.value = profileDescription.textContent;
+    edit.style.display = "block";
+  });
+
+  closeButton.addEventListener('click', () => {
+    edit.style.display = "none";
+  });
+
+  profileEditForm.addEventListener('submit', handleSubmit);
+
+  window.addEventListener('click', (e) => {
+    if (e.target === editModal) {
       edit.style.display = "none";
-  }
-}
+    }
+  });
 
-btn.addEventListener("click", openEditProfile);
-span.addEventListener("click", closeEditProfile);
+});
 
-function saveChangeProfile(e) {
-  e.preventDefault();
-  profileName.textContent = nameInput.value;
-  profileDescription.textContent = aboutInput.value;
-  openEditProfile();
-  closeEditProfile();
-}
 
-profileEditForm.addEventListener("submit", saveChangeProfile);
 
